@@ -1,0 +1,55 @@
+openapi: 3.0.2
+# -----------------------------------------------------------------------------
+# TODO: Update the info section with your details.
+# API Type can be one of INTERNAL Public, INTERNAL Private, or EXTERNAL
+# Version must be in the format 'v<MAJOR>.<MINOR>'
+# -----------------------------------------------------------------------------
+info:
+  title: Application Services Weather Management API
+  description: |
+    - **API Type:** INTERNAL
+
+  version: 'v1.0'
+servers:
+  - url: 'dev/api'
+    description: DEV server
+  - url: /v1
+    description: Base Url
+tags:
+  - name: Weather-management-xapi
+    description: OAS3 Weather management APIs
+
+security:
+  - InternalTiaaUsRopcAuth: []
+
+paths:
+  /api/v1/weather:
+    summary: Base Weather Path
+    description: weather
+    parameters:
+      - $ref: './common-libraries/components/headers.yaml#/Correlation-ID'
+      - $ref: './common-libraries/components/headers.yaml#/X-Channel-Id'
+      - $ref: './common-libraries/components/headers.yaml#/X-User-Id'
+      - $ref: './common-libraries-xapi/headers.yaml#/X-Remote-Host'
+    get:
+      summary: Weather forecast
+      description: The API gives Weather forecast
+operationId: getWeatherForecast
+      deprecated: false
+      parameters:
+        - $ref: './components/parameters.yaml#/cityQuery'
+      tags:
+        - Weather-management-xapi
+      responses:
+        '200':
+          $ref: './components/responses.yaml#/WeatherResponse'
+        '404':
+          $ref: './common-libraries/components/responses.yaml#/NotFound'
+        '401':
+          $ref: './common-libraries/components/responses.yaml#/Unauthorized'
+        '400':
+          $ref: './common-libraries/components/responses.yaml#/BadRequest'
+        '500':
+          $ref: './common-libraries/components/responses.yaml#/InternalServerError'
+        '503':
+          $ref: './common-libraries/components/responses.yaml#/ServiceUnavailable'

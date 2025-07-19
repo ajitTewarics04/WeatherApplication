@@ -1,0 +1,24 @@
+spring:
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+
+server:
+  servlet:
+    context-path: '/v1'
+  port: 8080
+  ssl:
+    enabled: false
+http:
+  session:
+    enabled: false
+info:
+  build:
+    artifact: 'weather-management-xapi-api'
+    description: '@project.description@'
+    name: '@project.name@'
+    appBasePath: "api"
+
+openweather.apikey: 'd2929e9483efc82c82c32ee7e02d563e'
+
+open.weather.api.url: 'https://api.openweathermap.org/data/2.5/forecast?q=%s&cnt=24&units=metric&appid=%s'

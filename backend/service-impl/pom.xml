@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://maven.apache.org/POM/4.0.0"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<parent>
+<artifactId>weather-management-xapi</artifactId>
+<groupId>com.weather.uscb.digital</groupId>
+<version>1.0-SNAPSHOT</version>
+</parent>
+<modelVersion>4.0.0</modelVersion>
+
+<artifactId>weather-management-xapi-service-impl</artifactId>
+<name>service-impl</name>
+<dependencies>
+<dependency>
+<groupId>com.weather.uscb.digital</groupId>
+<artifactId>weather-management-xapi-core</artifactId>
+<version>1.0-SNAPSHOT</version>
+<scope>compile</scope>
+</dependency>
+<dependency>
+<groupId>com.weather.uscb.digital</groupId>
+<artifactId>weather-management-xapi-repository-impl</artifactId>
+<version>1.0-SNAPSHOT</version>
+<scope>compile</scope>
+</dependency>
+<dependency>
+<groupId>org.mockito</groupId>
+<artifactId>mockito-core</artifactId>
+<scope>test</scope>
+</dependency>
+<dependency>
+<groupId>org.junit.jupiter</groupId>
+<artifactId>junit-jupiter</artifactId>
+<scope>test</scope>
+</dependency>
+</dependencies>
+</project>
